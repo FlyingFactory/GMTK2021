@@ -18,10 +18,10 @@ namespace Legacy {
         public static float dt = 0.02f;
 
         private void FixedUpdate() {
-            if (TimeStepEvent != null && GlobalData.GameState == GameStates.Normal) {
+            //if (TimeStepEvent != null && GlobalData.GameState == GameStates.Normal) {
                 dt = GameTimeSpeed * Time.fixedDeltaTime;
                 TimeStepEvent(dt);
-            }
+            //}
         }
 
         public static void Reset() {
