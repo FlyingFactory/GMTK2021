@@ -10,7 +10,7 @@ public class sceneManager : MonoBehaviour
 
     public void OnButtonPlay()
     {
-        SceneManager.LoadScene("Level1");        
+        SceneManager.LoadScene("SampleScene");        
     }
 
     public void OnButtonInstructions()
