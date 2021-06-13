@@ -16,8 +16,8 @@ namespace Battle {
     }
 
     public class BaseUnit : MonoBehaviour {
-        public virtual float Health { get; set; } = 100;
-        public virtual float MoveSpeed { get; set; } = 5;
+        public float Health = 100;
+        public float MoveSpeed = 5;
         public Rigidbody MovementCollider { get; set; }
 
         public UnitFacing AnimFacing = UnitFacing.South;
