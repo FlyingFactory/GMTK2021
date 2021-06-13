@@ -17,6 +17,7 @@ namespace Battle {
 
         public float fireRate = 4;
         private float fireCounter = 0;
+        public Projectile bullet;
 
         public float dashCooldown = 1;
         private float dashCounter = 0;
@@ -68,14 +69,14 @@ namespace Battle {
             
             if (!carrying) {
                 if (Input.GetAxis("Fire1") > 0.1f && fireCounter <= 0 && energy >= energyCost) {
-                    // Instantiate bullet
-                    // set bullet velocity
+                    Projectile b = Instantiate(bullet);
+                    b.Init(transform.position + 0.5f * Vector3.up, 10, 8 * Utils.GetMouseVectorXZ(transform.position).normalized, "PlayerProjectile");
                     energy -= energyCost;
                     fireCounter = 1f / fireRate;
                 }
             }
             else {
-                energy += energyRate * Time.fixedDeltaTime;
+                energy = Mathf.Min(1, energy + energyRate * Time.fixedDeltaTime);
             }
 
             if (Input.GetAxis("Jump") > 0.1f && dashCounter <= 0) {
@@ -99,6 +100,14 @@ namespace Battle {
                         this.carrying = true;
                     }
                 }
+            }
+        }
+
+        public override void DealDamage(float damage) {
+            Health -= damage;
+            if (Health <= 0) {
+                // spawn death animation
+                gameObject.SetActive(false);
             }
         }
     }
