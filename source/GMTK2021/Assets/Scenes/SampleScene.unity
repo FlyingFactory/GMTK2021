@@ -314,3 +314,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c91888570d867747b3278846acaaaba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 100
+  MoveSpeed: 5
+  AnimFacing: 4
+  AnimMove: 0
+  AnimShoot: 0
+  carrying: 1
+  battery: {fileID: 0}
+  energy: 1
+  energyCost: 0.1
+  energyRate: 0.2
+  fireRate: 4
+  dashCooldown: 1
+  dashDuration: 0.15
+  dashSpeed: 20
+  throwCooldown: 0.5
