@@ -27,7 +27,7 @@ namespace Battle {
 
         public Button buttonUp, buttonDown, buttonLeft, buttonRight;
 
-        public Animator animator;
+        public Animator animator = null;
 
         public float MaxHealth = 100;
         public float Health = 100;
@@ -47,11 +47,12 @@ namespace Battle {
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.W)) animator.SetTrigger("Direction up");
-            if (Input.GetKeyDown(KeyCode.S)) animator.SetTrigger("Direction down");
-            if (Input.GetKeyDown(KeyCode.D)) animator.SetTrigger("Direction rigth");
-            if (Input.GetKeyDown(KeyCode.A)) animator.SetTrigger("Direction left");
-
+            if (animator != null) {
+                if (Input.GetKeyDown(KeyCode.W)) animator.SetTrigger("Direction up");
+                if (Input.GetKeyDown(KeyCode.S)) animator.SetTrigger("Direction down");
+                if (Input.GetKeyDown(KeyCode.D)) animator.SetTrigger("Direction rigth");
+                if (Input.GetKeyDown(KeyCode.A)) animator.SetTrigger("Direction left");
+            }
         }
 
         public void Move(Vector3 displacement) {
