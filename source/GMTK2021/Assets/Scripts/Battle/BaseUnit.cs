@@ -25,8 +25,6 @@ namespace Battle {
         public bool AnimShoot = false;
 
         public void Move(Vector3 displacement) {
-
-            Debug.Log(displacement);
             RaycastHit hit;
             if (MovementCollider == null || !MovementCollider.SweepTest(displacement, out hit, displacement.magnitude, QueryTriggerInteraction.Ignore)) {
                 transform.position += displacement;

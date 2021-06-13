@@ -83,14 +83,22 @@ namespace Battle {
                 dashRemainingDuration = dashDuration;
                 dashDirection = inputVector;
                 if (dashDirection.magnitude < Mathf.Epsilon) {
-                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                    Vector3 pos = ray.origin - ray.direction * (ray.origin.y / ray.direction.y);
-                    dashDirection = (pos - transform.position).normalized;
+                    dashDirection = Utils.GetMouseVectorXZ(transform.position).normalized;
                 }
             }
 
             if (Input.GetAxis("Fire2") > 0.1f && throwCounter <= 0) {
-                // either throw or pickup
+                throwCounter = throwCooldown;
+                if (carrying) {
+                    this.battery.InitThrow(Utils.GetMouseVectorXZ(transform.position).normalized * 4);
+                    this.carrying = false;
+                }
+                else {
+                    if ((this.battery.transform.position - transform.position).magnitude < 1) {
+                        this.battery.Pickup();
+                        this.carrying = true;
+                    }
+                }
             }
         }
     }
