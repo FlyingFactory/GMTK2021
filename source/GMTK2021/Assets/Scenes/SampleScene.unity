@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 111471724}
   - component: {fileID: 111471723}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Battery
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01aa245313966aa468ce6006044bf2cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 100
   Health: 100
   MoveSpeed: 5
   AnimFacing: 4
@@ -265,7 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1041526399}
   - component: {fileID: 1041526400}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: robot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1622437873}
   - component: {fileID: 1622437874}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,6 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c91888570d867747b3278846acaaaba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 100
   Health: 100
   MoveSpeed: 5
   AnimFacing: 4
@@ -392,6 +394,7 @@ MonoBehaviour:
   energyCost: 0.1
   energyRate: 0.2
   fireRate: 4
+  bullet: {fileID: 339066367912962616, guid: b15b031ccae49e74b91341f0af8747eb, type: 3}
   dashCooldown: 1
   dashDuration: 0.15
   dashSpeed: 20
@@ -406,7 +409,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1956867742}
   - component: {fileID: 1956867743}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: batteryUsed
   m_TagString: Untagged
   m_Icon: {fileID: 0}

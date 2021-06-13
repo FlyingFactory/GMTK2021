@@ -16,6 +16,7 @@ namespace Battle {
     }
 
     public class BaseUnit : MonoBehaviour {
+        public float MaxHealth = 100;
         public float Health = 100;
         public float MoveSpeed = 5;
         public Rigidbody MovementCollider { get; set; }
@@ -31,6 +32,13 @@ namespace Battle {
             }
         }
 
+        public virtual void DealDamage(float damage) {
+            Health -= damage;
+            if (Health <= 0) {
+                // spawn death animation
+                Destroy(gameObject);
+            }
+        }
     }
 
 }
